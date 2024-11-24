@@ -1,0 +1,20 @@
+PREFIX ex: <http://ex.org/a#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?URI a ex:Restaurant;
+    ex:name ?Name;
+    ex:rating ?rating;
+    ex:price ?price_Category;
+    ex:latitude ?lat;
+    ex:longitude ?lon;
+    ex:neighbourhood_group ?neighbourhood_group;
+}
+FROM <file:Restaurant.csv>
+WHERE {
+  BIND (URI(CONCAT('http://ex.org/restaurant/', ?Name)) AS ?URI)
+  BIND (xsd:decimal(?Lat) AS ?lat)
+  BIND (xsd:decimal(?Lon) AS ?lon)
+  BIND (xsd:decimal(?Rating) AS ?rating)
+  BIND (xsd:decimal(?Price_Category) AS ?price_Category)
+}

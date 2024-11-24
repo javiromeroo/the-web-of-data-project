@@ -1,0 +1,1169 @@
+@base          <file:///C:/Users/vthie/OneDrive/Escritorio/Universidad/10moSemestre/WATOS/Proyecto/Neighbourhood_mapping.sparql> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex:  <http://ex.org/a#> .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Kensington" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Midtown" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Harlem" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Clinton Hill" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "East Harlem" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Murray Hill" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Bedford-Stuyvesant" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Hell's Kitchen" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Upper West Side" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Chinatown" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "South Slope" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "West Village" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Williamsburg" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Fort Greene" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Chelsea" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Crown Heights" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Park Slope" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Windsor Terrace" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Inwood" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "East Village" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Greenpoint" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Bushwick" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Flatbush" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Lower East Side" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Prospect-Lefferts Gardens" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Long Island City" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Kips Bay" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "SoHo" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Upper East Side" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Prospect Heights" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Washington Heights" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Woodside" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Brooklyn Heights" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Carroll Gardens" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Gowanus" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Flatlands" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Cobble Hill" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Flushing" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Boerum Hill" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Sunnyside" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "DUMBO" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "St. George" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Highbridge" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Financial District" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Ridgewood" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Morningside Heights" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Jamaica" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Middle Village" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "NoHo" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Ditmars Steinway" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Flatiron District" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Roosevelt Island" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Greenwich Village" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Little Italy" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "East Flatbush" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Tompkinsville" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Astoria" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Clason Point" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Eastchester" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Kingsbridge" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Two Bridges" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Queens Village" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Rockaway Beach" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Forest Hills" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Nolita" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Woodlawn" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "University Heights" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Gravesend" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Gramercy" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Allerton" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "East New York" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Theater District" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Concourse Village" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Sheepshead Bay" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Emerson Hill" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Fort Hamilton" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Bensonhurst" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Tribeca" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Shore Acres" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Sunset Park" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Concourse" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Elmhurst" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Brighton Beach" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Jackson Heights" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Cypress Hills" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "St. Albans" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Arrochar" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Rego Park" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Wakefield" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Clifton" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Bay Ridge" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Graniteville" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Spuyten Duyvil" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Stapleton" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Briarwood" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Ozone Park" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Columbia St" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Vinegar Hill" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Mott Haven" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Longwood" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Canarsie" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Battery Park City" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Civic Center" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "East Elmhurst" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "New Springville" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Morris Heights" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Arverne" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Cambria Heights" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Tottenville" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Mariners Harbor" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Concord" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Borough Park" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Bayside" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Downtown Brooklyn" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Port Morris" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Fieldston" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Kew Gardens" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Midwood" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "College Point" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Mount Eden" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "City Island" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Glendale" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Port Richmond" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Red Hook" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Richmond Hill" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Bellerose" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Maspeth" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Williamsbridge" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Soundview" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Woodhaven" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Woodrow" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Co-op City" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Stuyvesant Town" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Parkchester" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "North Riverdale" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Dyker Heights" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Bronxdale" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Sea Gate" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Riverdale" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Kew Gardens Hills" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Bay Terrace" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Norwood" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Claremont Village" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Whitestone" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Fordham" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Bayswater" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Navy Yard" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Brownsville" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Eltingville" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Fresh Meadows" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Mount Hope" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Lighthouse Hill" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Springfield Gardens" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Howard Beach" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Belle Harbor" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Jamaica Estates" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Van Nest" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Morris Park" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "West Brighton" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Far Rockaway" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "South Ozone Park" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Tremont" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Corona" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Great Kills" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Manhattan Beach" .
+
+<http://ex.org/neighbourhood/Manhattan>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Manhattan" ;
+        ex:neighbourhood  "Marble Hill" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Dongan Hills" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Castleton Corners" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "East Morrisania" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Hunts Point" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Neponsit" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Pelham Bay" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Randall Manor" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Throgs Neck" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Todt Hill" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "West Farms" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Silver Lake" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Morrisania" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Laurelton" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Grymes Hill" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Holliswood" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Pelham Gardens" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Belmont" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Rosedale" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Edgemere" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "New Brighton" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Midland Beach" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Baychester" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Melrose" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Bergen Beach" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Richmondtown" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Howland Hook" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Schuylerville" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Coney Island" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "New Dorp Beach" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Prince's Bay" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "South Beach" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Bath Beach" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Jamaica Hills" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Oakwood" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Castle Hill" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Hollis" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Douglaston" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Huguenot" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Olinville" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Edenwald" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Grant City" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Westerleigh" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Bay Terrace, Staten Island" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Westchester Square" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Little Neck" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Fort Wadsworth" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Rosebank" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Bronx" ;
+        ex:neighbourhood  "Unionport" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Brooklyn" ;
+        ex:neighbourhood  "Mill Basin" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Arden Heights" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Bull's Head" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "New Dorp" ;
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Rossville" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Queens" ;
+        ex:neighbourhood  "Breezy Point" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type          ex:Neighbourhood_Group ;
+        ex:name           "Staten Island" ;
+        ex:neighbourhood  "Willowbrook" .
+
+<http://ex.org/neighbourhood/Garfield>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Garfield" .
+
+<http://ex.org/neighbourhood/Hackensack>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Hackensack" .
+
+<http://ex.org/neighbourhood/Ridgewood>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Ridgewood" .
+
+<http://ex.org/neighbourhood/Newark>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Newark" .
+
+<http://ex.org/neighbourhood/Jersey%20City>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Jersey City" .
+
+<http://ex.org/neighbourhood/Staten%20Island>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Staten Island" .
+
+<http://ex.org/neighbourhood/Palisades%20Park>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Palisades Park" .
+
+<http://ex.org/neighbourhood/Brooklyn>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Brooklyn" .
+
+<http://ex.org/neighbourhood/Union%20City>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Union City" .
+
+<http://ex.org/neighbourhood/East%20Rutherford>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "East Rutherford" .
+
+<http://ex.org/neighbourhood/Kearny>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Kearny" .
+
+<http://ex.org/neighbourhood/New%20York>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "New York" .
+
+<http://ex.org/neighbourhood/Wallington>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Wallington" .
+
+<http://ex.org/neighbourhood/North%20Bergen>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "North Bergen" .
+
+<http://ex.org/neighbourhood/Queens>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Queens" .
+
+<http://ex.org/neighbourhood/Paterson>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Paterson" .
+
+<http://ex.org/neighbourhood/Bronx>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Bronx" .
+
+<http://ex.org/neighbourhood/Passaic>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Passaic" .
+
+<http://ex.org/neighbourhood/Fairview>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Fairview" .
+
+<http://ex.org/neighbourhood/Secaucus>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Secaucus" .
+
+<http://ex.org/neighbourhood/Teaneck>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Teaneck" .
+
+<http://ex.org/neighbourhood/Hasbrouck%20Heights>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Hasbrouck Heights" .
+
+<http://ex.org/neighbourhood/Clifton>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Clifton" .
+
+<http://ex.org/neighbourhood/Bayonne>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Bayonne" .
+
+<http://ex.org/neighbourhood/Rutherford>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Rutherford" .
+
+<http://ex.org/neighbourhood/Bogota>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Bogota" .
+
+<http://ex.org/neighbourhood/Hoboken>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Hoboken" .
+
+<http://ex.org/neighbourhood/Belleville>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Belleville" .
+
+<http://ex.org/neighbourhood/Rego%20Park>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Rego Park" .
+
+<http://ex.org/neighbourhood/Lodi>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Lodi" .
+
+<http://ex.org/neighbourhood/Carlstadt>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Carlstadt" .
+
+<http://ex.org/neighbourhood/West%20New%20York>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "West New York" .
+
+<http://ex.org/neighbourhood/Moonachie>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Moonachie" .
+
+<http://ex.org/neighbourhood/Guttenberg>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Guttenberg" .
+
+<http://ex.org/neighbourhood/Elmhurst>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Elmhurst" .
+
+<http://ex.org/neighbourhood/Harrison>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Harrison" .
+
+<http://ex.org/neighbourhood/Ridgefield%20Park>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Ridgefield Park" .
+
+<http://ex.org/neighbourhood/Elizabeth>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Elizabeth" .
+
+<http://ex.org/neighbourhood/Edgewater>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Edgewater" .
+
+<http://ex.org/neighbourhood/North%20Arlington>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "North Arlington" .
+
+<http://ex.org/neighbourhood/Nutley>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Nutley" .
+
+<http://ex.org/neighbourhood/Weehawken>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Weehawken" .
+
+<http://ex.org/neighbourhood/South%20Hackensack>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "South Hackensack" .
+
+<http://ex.org/neighbourhood/Lyndhurst>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Lyndhurst" .
+
+<http://ex.org/neighbourhood/Corona>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Corona" .
+
+<http://ex.org/neighbourhood/Little%20Ferry>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Little Ferry" .
+
+<http://ex.org/neighbourhood/Saddle%20Brook>
+        rdf:type  ex:Neighbourhood_Group ;
+        ex:name  "Saddle Brook" .

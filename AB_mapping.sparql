@@ -1,0 +1,27 @@
+PREFIX ex: <http://ex.org/a#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT{
+    ?URI a ex:Listing;
+        ex:id ?ID;
+        ex:name ?name;
+        ex:neighbourhood ?neighbourhood;
+        ex:latitude ?Latitude;
+        ex:longitude ?Longitude;
+        ex:room_type ?room_type;
+        ex:price ?Price;
+        ex:minimum_nights ?Minimum_nights;
+        ex:number_of_reviews ?Number_of_reviews;
+        ex:last_review ?Last_review;
+}
+FROM <file:AB_NYC_2019.csv>
+WHERE {
+    BIND (URI(CONCAT('http://ex.org/listing/', ?id)) AS ?URI)
+    BIND (xsd:integer(?id) AS ?ID)
+    BIND (xsd:decimal(?latitude) AS ?Latitude)
+    BIND (xsd:decimal(?longitude) AS ?Longitude)
+    BIND (xsd:integer(?price) AS ?Price)
+    BIND (xsd:integer(?minimum_nights) AS ?Minimum_nights)
+    BIND (xsd:integer(?number_of_reviews) AS ?Number_of_reviews)
+    BIND (xsd:date(?last_review) AS ?Last_review)
+}

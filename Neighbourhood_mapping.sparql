@@ -1,0 +1,12 @@
+PREFIX ex: <http://ex.org/a#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?URI a ex:Neighbourhood_Group;
+    ex:name ?neighbourhood_group;
+    ex:neighbourhood ?neighbourhood;
+}
+FROM <file:Neighbourhood.csv>
+WHERE {
+  BIND (URI(CONCAT('http://ex.org/neighbourhood/', ?neighbourhood_group)) AS ?URI)
+}
