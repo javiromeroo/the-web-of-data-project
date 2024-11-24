@@ -9,6 +9,7 @@ CONSTRUCT {
     ex:latitude ?lat;
     ex:longitude ?lon;
     ex:neighbourhood_group ?neighbourhood_group;
+    ex:address ?Address;
 }
 FROM <file:Restaurant.csv>
 WHERE {

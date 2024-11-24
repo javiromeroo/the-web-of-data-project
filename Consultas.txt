@@ -20,3 +20,113 @@ WHERE {
 }
 
 # Consulta 2
+
+SELECT ?restaurantName ?listingName ?neighbourhoodName ?lgdPlaceName ?lgdPlaceType
+WHERE {
+    # Restaurant information
+    ?restaurant rdf:type ex:Restaurant ;
+                ex:name ?restaurantName ;
+                ex:latitude ?restLat ;
+                ex:longitude ?restLon ;
+                ex:neighbourhood_group ?restNeighbourhood .
+    
+    # Listing information
+    ?listing rdf:type ex:Listing ;
+             ex:name ?listingName ;
+             ex:latitude ?listLat ;
+             ex:longitude ?listLon ;
+             ex:neighbourhood ?listNeighbourhood .
+    
+    # Neighbourhood group information
+    ?neighbourhoodGroup rdf:type ex:Neighbourhood_Group ;
+                        ex:name ?neighbourhoodName ;
+                        ex:neighbourhood ?specificNeighbourhood .
+    
+    # Find nearby Linked Geo Data places
+    SERVICE <http://linkedgeodata.org/sparql> {
+        ?lgdPlace a lgdo:Amenity ;  # Only query for amenities in LGD
+                 geo:lat ?lgdLat ;
+                 geo:long ?lgdLon ;
+                 rdfs:label ?lgdPlaceName ;
+                 rdf:type ?lgdPlaceType .
+
+        # Find LGD places near the restaurant's location
+        FILTER(
+            bif:st_distance(
+                bif:st_point(?restLon, ?restLat), 
+                bif:st_point(?lgdLon, ?lgdLat)
+            ) < 0.01
+        )
+    }
+
+    # Ensure data consistency by matching neighbourhood names
+    FILTER (?restNeighbourhood = ?listNeighbourhood)
+}
+
+# Consulta 3
+
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://ex.org/>
+
+SELECT ?restaurantName ?distance
+WHERE {
+    ?restaurant rdf:type ex:Restaurant ;
+                ex:name ?restaurantName ;
+                geo:hasGeometry ?geometry .
+    ?geometry geo:asWKT ?restaurantWKT .
+
+    # Reference point (e.g., central location for the query)
+    BIND("POINT(-73.97237 40.64749)"^^geo:wktLiteral AS ?referencePoint)
+
+    # Calculate distance
+    BIND(geof:distance(?restaurantWKT, ?referencePoint, uom:metre) AS ?distance)
+
+    # Filter results to within 10,000 meters (10 km)
+    FILTER(?distance <= 10000)
+}
+ORDER BY ?distance
+
+# Consulta 4
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ex: <http://ex.org/a#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX lgdo: <http://linkedgeodata.org/ontology/>
+PREFIX bif: <bif:>
+
+SELECT ?listing ?neighbourhood ?neighbourhood_group ?name
+WHERE {
+  # Buscar el neighbourhood asociado al listing "airbnb"
+  ?listing rdf:type ex:Listing ;
+           ex:name "Clean & quiet apt home by the park" ;
+           ex:neighbourhood ?neighbourhood .
+  ?neighbourhood_group ex:neighbourhood ?neighbourhood ;
+                       ex:name ?neighbourhood_name.
+  ?restaurant rdf:type ex:Restaurant ;
+              ex:neighbourhood_group ?neighbourhood_name ;
+  			  ex:name ?name ;
+       		  ex:latitude ?lat ;
+              ex:longitude ?lon ;
+  SERVICE <http://linkedgeodata.org/sparql> {
+        ?lgdPlace a lgdo:Amenity ;  # Only query for amenities in LGD
+                 geo:lat ?lgdLat ;
+                 geo:long ?lgdLon ;
+                 rdfs:label ?lgdPlaceName ;
+                 rdf:type ?lgdPlaceType .
+
+        # Find LGD places near the restaurant's location
+        FILTER(
+            bif:st_distance(
+                bif:st_point(?lon, ?lat), 
+                bif:st_point(?lgdLon, ?lgdLat)
+            ) < 0.1
+        )
+  }
+}
