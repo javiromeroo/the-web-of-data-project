@@ -12,161 +12,103 @@ PREFIX lgdo: <http://linkedgeodata.org/ontology/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-# Consulta 1
+# Consulta 1: Extraemos la informacion del Airbnb más economico y con review más reciente que tenga más de 20 reviews, y donde el precio es distinto de 0
 
-SELECT ?listing ?neighbourhood ?neighbourhood_group ?name
+SELECT ?listing ?name ?latitude ?longitude ?price ?reviews ?last_review
 WHERE {
-  # Buscar el neighbourhood asociado al listing "airbnb"
-  ?listing rdf:type ex:Listing ;
-           ex:name "Clean & quiet apt home by the park" ;
-           ex:neighbourhood ?neighbourhood .
-  ?neighbourhood_group ex:neighbourhood ?neighbourhood ;
-                       ex:name ?neighbourhood_name.
-  ?restaurant rdf:type ex:Restaurant ;
-              ex:neighbourhood_group ?neighbourhood_name ;
-  			  ex:name ?name.
+    SELECT ?listing ?name ?latitude ?longitude ?price ?reviews ?last_review
+    WHERE {
+        ?listing rdf:type ex:Listing ;
+            ex:name ?name ;
+            ex:latitude ?latitude ;
+            ex:longitude ?longitude ;
+            ex:price ?price ;
+            ex:number_of_reviews ?reviews ;
+            ex:last_review ?last_review .
+
+        FILTER(?price != 0)
+        FILTER(?reviews > 20)
+  	}
+    ORDER BY DESC(?last_review)
 }
+ORDER BY ASC(?price)
+LIMIT 1
 
-# Consulta 2
+# Consulta 2: Buscamos informacion geografica relevante cerca del listing de la Consulta 1
 
-SELECT ?restaurantName ?listingName ?neighbourhoodName ?lgdPlaceName ?lgdPlaceType
+SELECT ?geometry ?label
 WHERE {
-    # Restaurant information
-    ?restaurant rdf:type ex:Restaurant ;
-                ex:name ?restaurantName ;
-                ex:latitude ?restLat ;
-                ex:longitude ?restLon ;
-                ex:neighbourhood_group ?restNeighbourhood .
-    
-    # Listing information
-    ?listing rdf:type ex:Listing ;
-             ex:name ?listingName ;
-             ex:latitude ?listLat ;
-             ex:longitude ?listLon ;
-             ex:neighbourhood ?listNeighbourhood .
-    
-    # Neighbourhood group information
-    ?neighbourhoodGroup rdf:type ex:Neighbourhood_Group ;
-                        ex:name ?neighbourhoodName ;
-                        ex:neighbourhood ?specificNeighbourhood .
-    
-    # Find nearby Linked Geo Data places
     SERVICE <http://linkedgeodata.org/sparql> {
-        ?lgdPlace a lgdo:Amenity ;  # Only query for amenities in LGD
-                 geo:lat ?lgdLat ;
-                 geo:long ?lgdLon ;
-                 rdfs:label ?lgdPlaceName ;
-                 rdf:type ?lgdPlaceType .
-
-        # Find LGD places near the restaurant's location
-        FILTER(
-            bif:st_distance(
-                bif:st_point(?restLon, ?restLat), 
-                bif:st_point(?lgdLon, ?lgdLat)
-            ) < 0.01
-        )
-    }
-
-    # Ensure data consistency by matching neighbourhood names
-    FILTER (?restNeighbourhood = ?listNeighbourhood)
-}
-
-# Consulta 3
-
-SELECT ?restaurantName ?distance
-WHERE {
-    ?restaurant rdf:type ex:Restaurant ;
-                ex:name ?restaurantName ;
-                geo:hasGeometry ?geometry .
-    ?geometry geo:asWKT ?restaurantWKT .
-
-    # Reference point (e.g., central location for the query)
-    BIND("POINT(-73.97237 40.64749)"^^geo:wktLiteral AS ?referencePoint)
-
-    # Calculate distance
-    BIND(geof:distance(?restaurantWKT, ?referencePoint, uom:metre) AS ?distance)
-
-    # Filter results to within 10,000 meters (10 km)
-    FILTER(?distance <= 10000)
-}
-ORDER BY ?distance
-
-# Consulta 4
-
-SELECT ?listing ?neighbourhood ?neighbourhood_group ?name
-WHERE {
-  # Buscar el neighbourhood asociado al listing "airbnb"
-  ?listing rdf:type ex:Listing ;
-           ex:name "Clean & quiet apt home by the park" ;
-           ex:neighbourhood ?neighbourhood .
-  ?neighbourhood_group ex:neighbourhood ?neighbourhood ;
-                       ex:name ?neighbourhood_name.
-  ?restaurant rdf:type ex:Restaurant ;
-              ex:neighbourhood_group ?neighbourhood_name ;
-  			  ex:name ?name ;
-       		  ex:latitude ?lat ;
-              ex:longitude ?lon ;
-  SERVICE <http://linkedgeodata.org/sparql> {
-        ?lgdPlace a lgdo:Amenity ;  # Only query for amenities in LGD
-                 geo:lat ?lgdLat ;
-                 geo:long ?lgdLon ;
-                 rdfs:label ?lgdPlaceName ;
-                 rdf:type ?lgdPlaceType .
-
-        # Find LGD places near the restaurant's location
-        FILTER(
-            bif:st_distance(
-                bif:st_point(?lon, ?lat), 
-                bif:st_point(?lgdLon, ?lgdLat)
-            ) < 0.1
-        )
-  }
-}
-
-# Consulta 5
-
-SELECT ?listing ?neighbourhood ?neighbourhood_group ?name WHERE {
-    # Buscar el neighbourhood asociado al listing "airbnb"
-    ?listing a ex:Listing ;
-             ex:name "Clean & quiet apt home by the park" ;
-             ex:neighbourhood ?neighbourhood ;
-             ex:latitude ?ABlat ;
-             ex:longitude ?ABlon .
-
-    # Asociar neighbourhood_group con neighbourhood
-    ?neighbourhood_group ex:neighbourhood ?neighbourhood ;
-                         ex:name ?neighbourhood_name .
-
-    # Buscar restaurantes en el mismo neighbourhood_group
-    ?restaurant rdf:type ex:Restaurant ;
-                ex:neighbourhood_group ?neighbourhood_name ;
-                ex:name ?name ;
-                ex:latitude ?Rlat ;
-                ex:longitude ?Rlon .
-
-    # Crear puntos geoespaciales
-    BIND(STRDT(CONCAT("POINT(", STR(?ABlon), " ", STR(?ABlat), ")"), geo:wktLiteral) AS ?referencePoint)
-    BIND(STRDT(CONCAT("POINT(", STR(?Rlon), " ", STR(?Rlat), ")"), geo:wktLiteral) AS ?restaurantPoint)
-
-    # Calcular la distancia y filtrar
-    BIND(geof:distance(?referencePoint, ?restaurantPoint, uom:metre) AS ?distance)
-    FILTER(?distance <= 10000)
-}
-
-# Consulta 6 (La de la clase)
-
-SELECT ?country ?geometry ?label WHERE {
-    SERVICE <https://query.wikidata.org/sparql> {
-        SERVICE <http://linkedgeodata.org/sparql> {
         ?s geom:geometry [ geo:asWKT ?geometry ] ;
-            a lgdo:Embassy;
-            lgdo:country ?code ;
+            a lgdo:Museum;
             rdfs:label ?label .
-        FILTER(bif:st_intersects(?geometry, bif:st_point(-73.98451147587761, 40.7488205625615), 10))
-        }
-        ?country wdt:P297 ?code .
+        FILTER(bif:st_intersects(?geometry, bif:st_point(-73.79916, 40.69085), 10))
     }
 }
+
+SELECT ?geometry ?label
+WHERE {
+    SERVICE <http://linkedgeodata.org/sparql> {
+        ?s geom:geometry [ geo:asWKT ?geometry ] ;
+            a lgdo:Hospital;
+            rdfs:label ?label .
+        FILTER(bif:st_intersects(?geometry, bif:st_point(-73.79916, 40.69085), 2))
+    }
+}
+
+SELECT ?geometry ?label
+WHERE {
+    SERVICE <http://linkedgeodata.org/sparql> {
+        ?s geom:geometry [ geo:asWKT ?geometry ] ;
+            a lgdo:Pharmacy;
+            rdfs:label ?label .
+        FILTER(bif:st_intersects(?geometry, bif:st_point(-73.79916, 40.69085), 2))
+    }
+}
+
+SELECT ?geometry ?label
+WHERE {
+    SERVICE <http://linkedgeodata.org/sparql> {
+        ?s geom:geometry [ geo:asWKT ?geometry ] ;
+            a lgdo:Bank;
+            rdfs:label ?label .
+        FILTER(bif:st_intersects(?geometry, bif:st_point(-73.79916, 40.69085), 2))
+    }
+}
+
+SELECT ?geometry ?label
+WHERE {
+    SERVICE <http://linkedgeodata.org/sparql> {
+        ?s geom:geometry [ geo:asWKT ?geometry ] ;
+            a lgdo:Theatre;
+            rdfs:label ?label .
+        FILTER(bif:st_intersects(?geometry, bif:st_point(-73.79916, 40.69085), 10))
+    }
+}
+
+# Consulta 3: Buscamos restaurantes que esten dentro del mismo neighbourhod de la Consulta 1
+
+SELECT ?name ?price ?address ?rating
+WHERE {
+    ?listing rdf:type ex:Listing ;
+        ex:name "IT'S SIMPLY CONVENIENT!" ;
+        ex:neighbourhood ?neighbourhood .
+
+    ?neighbourhood_group ex:neighbourhood ?neighbourhood ;
+        ex:name ?neighbourhood_name.
+
+    ?restaurant rdf:type ex:Restaurant ;
+        ex:neighbourhood_group ?neighbourhood_name ;
+        ex:price ?price ;
+        ex:address ?address ;
+        ex:rating ?rating ;
+  		ex:name ?name .
+
+    FILTER(?rating > 3.5)
+    FILTER(?price <= 2.0)
+}
+ORDER BY DESC(?rating)
+LIMIT 1
 
 # IDEAS
 
