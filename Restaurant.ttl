@@ -186,7 +186,7 @@
         ex:price                2.0 ;
         ex:latitude             40.625346 ;
         ex:longitude            -74.029966 ;
-        ex:neighbourhood_group  "8309 3rd Ave" ;
+        ex:neighbourhood_group  "Brooklyn" ;
         ex:address              "Georgian Cuisine, 8309 3rd Ave, Brooklyn, NY 11209" .
 
 <http://ex.org/restaurant/Ukrainian%20East%20Village%20Restaurant>
@@ -381,7 +381,7 @@
         ex:price                4.0 ;
         ex:latitude             40.7578391 ;
         ex:longitude            -73.9753076 ;
-        ex:neighbourhood_group  "E 50th St" ;
+        ex:neighbourhood_group  "New York" ;
         ex:address              "455 Madison Avenue at, E 50th St, New York, NY 10022" .
 
 <http://ex.org/restaurant/Restaurant%20Pearl>
@@ -401,7 +401,7 @@
         ex:price                2.0 ;
         ex:latitude             40.7432474 ;
         ex:longitude            -73.9996989 ;
-        ex:neighbourhood_group  "W 20th St of" ;
+        ex:neighbourhood_group  "New York" ;
         ex:address              "196 8th Ave Corner, W 20th St of, New York, NY 10011" .
 
 <http://ex.org/restaurant/El%20Jardin%20Restaurant>
@@ -1660,7 +1660,7 @@
         ex:rating               5.0 ;
         ex:latitude             40.6669558 ;
         ex:longitude            -73.9918603 ;
-        ex:neighbourhood_group  "548 4th Ave" ;
+        ex:neighbourhood_group  "Brooklyn" ;
         ex:address              "Store Front, 548 4th Ave, Brooklyn, NY 11215" .
 
 <http://ex.org/restaurant/Morelos%20Mexican%20Restaurant%20&%20Deli>
@@ -4475,7 +4475,7 @@
         ex:price                1.0 ;
         ex:latitude             40.679448 ;
         ex:longitude            -73.885529 ;
-        ex:neighbourhood_group  "Atlantic Ave" ;
+        ex:neighbourhood_group  "Brooklyn" ;
         ex:address              "234 Cleveland Street Btw Fulton Street &, Atlantic Ave, Brooklyn, NY 11208" .
 
 <http://ex.org/restaurant/San%20Antonio%20Mexican%20Restaurant>

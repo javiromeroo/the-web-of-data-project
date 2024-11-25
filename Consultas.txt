@@ -1,8 +1,16 @@
+PREFIX bif: <bif:>
+PREFIX ex: <http://ex.org/a#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX ex: <http://ex.org/a#>
+PREFIX geom: <http://geovocab.org/geometry#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX lgdo: <http://linkedgeodata.org/ontology/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
 # Consulta 1
 
@@ -65,11 +73,6 @@ WHERE {
 
 # Consulta 3
 
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX ex: <http://ex.org/>
-
 SELECT ?restaurantName ?distance
 WHERE {
     ?restaurant rdf:type ex:Restaurant ;
@@ -89,17 +92,6 @@ WHERE {
 ORDER BY ?distance
 
 # Consulta 4
-
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX ex: <http://ex.org/a#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
-PREFIX lgdo: <http://linkedgeodata.org/ontology/>
-PREFIX bif: <bif:>
 
 SELECT ?listing ?neighbourhood ?neighbourhood_group ?name
 WHERE {
@@ -133,52 +125,47 @@ WHERE {
 
 # Consulta 5
 
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX ex: <http://ex.org/a#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
-PREFIX lgdo: <http://linkedgeodata.org/ontology/>
+SELECT ?listing ?neighbourhood ?neighbourhood_group ?name WHERE {
+    # Buscar el neighbourhood asociado al listing "airbnb"
+    ?listing a ex:Listing ;
+             ex:name "Clean & quiet apt home by the park" ;
+             ex:neighbourhood ?neighbourhood ;
+             ex:latitude ?ABlat ;
+             ex:longitude ?ABlon .
 
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
-PREFIX ex: <http://ex.org/a#>
+    # Asociar neighbourhood_group con neighbourhood
+    ?neighbourhood_group ex:neighbourhood ?neighbourhood ;
+                         ex:name ?neighbourhood_name .
 
-SELECT ?listing ?neighbourhood ?neighbourhood_group ?name
-WHERE {
-  # Buscar el neighbourhood asociado al listing "airbnb"
-  ?listing rdf:type ex:Listing ;
-           ex:name "Clean & quiet apt home by the park" ;
-           ex:neighbourhood ?neighbourhood ;
-           ex:latitude ?ABlat ;
-           ex:longitude ?ABlon .
+    # Buscar restaurantes en el mismo neighbourhood_group
+    ?restaurant rdf:type ex:Restaurant ;
+                ex:neighbourhood_group ?neighbourhood_name ;
+                ex:name ?name ;
+                ex:latitude ?Rlat ;
+                ex:longitude ?Rlon .
 
-  # Construir el punto de referencia
-  BIND(STRDT(CONCAT("POINT(", STR(?ABlon), " ", STR(?ABlat), ")"), geo:wktLiteral) AS ?referencePoint)
+    # Crear puntos geoespaciales
+    BIND(STRDT(CONCAT("POINT(", STR(?ABlon), " ", STR(?ABlat), ")"), geo:wktLiteral) AS ?referencePoint)
+    BIND(STRDT(CONCAT("POINT(", STR(?Rlon), " ", STR(?Rlat), ")"), geo:wktLiteral) AS ?restaurantPoint)
 
-  # Asociar neighbourhood_group con neighbourhood
-  ?neighbourhood_group ex:neighbourhood ?neighbourhood ;
-                       ex:name ?neighbourhood_name.
+    # Calcular la distancia y filtrar
+    BIND(geof:distance(?referencePoint, ?restaurantPoint, uom:metre) AS ?distance)
+    FILTER(?distance <= 10000)
+}
 
-  # Buscar restaurantes en el mismo neighbourhood_group
-  ?restaurant rdf:type ex:Restaurant ;
-              ex:neighbourhood_group ?neighbourhood_name ;
-              ex:name ?name ;
-              ex:latitude ?Rlat ;
-              ex:longitude ?Rlon .
+# Consulta 6 (La de la clase)
 
-  # Construir el punto del restaurante
-  BIND(STRDT(CONCAT("POINT(", STR(?Rlon), " ", STR(?Rlat), ")"), geo:wktLiteral) AS ?restaurantPoint)
-
-  # Calcular la distancia
-  BIND(geof:distance(?restaurantPoint, ?referencePoint, uom:metre) AS ?distance)
-
-  # Filtro de distancia
-  FILTER(?distance <= 100000)
+SELECT ?country ?geometry ?label WHERE {
+    SERVICE <https://query.wikidata.org/sparql> {
+        SERVICE <http://linkedgeodata.org/sparql> {
+        ?s geom:geometry [ geo:asWKT ?geometry ] ;
+            a lgdo:Embassy;
+            lgdo:country ?code ;
+            rdfs:label ?label .
+        FILTER(bif:st_intersects(?geometry, bif:st_point(-73.98451147587761, 40.7488205625615), 10))
+        }
+        ?country wdt:P297 ?code .
+    }
 }
 
 # IDEAS
@@ -190,5 +177,3 @@ WHERE {
 3. Ver los restaurantes que estan cerca de un listing y que tengan una puntuacion mayor a cierto valor y un categoria de precio menor a 3.0. Devolver el nombre, el address, neighbourhood_group, rating y price
 
 4. Ver los listings que sean de categoria private room, que tengan un numero de reviews mayor a 50 y con un precio menor a cierto valor y sacar los 10 más actualizados. Que devuelvan el nombre del listing, el precio, cantidad de noches minimas, neighbourhod.
-
-Arreglar el construct de Restaurant
