@@ -109,13 +109,3 @@ WHERE {
 }
 ORDER BY DESC(?rating)
 LIMIT 1
-
-# IDEAS
-
-1. Ver los restaurantes que esten en el mismo neighbourhood de un listing y que esten a menos de ciertos metros de distancia. Devolver el nombre y el address de los restaurantes.
-
-2. Ver los museos que esten alrededor de un listing y ver los restaurantes que esten cerca de esos museos. Devolver el nombre del museo y de los restaurantes.
-
-3. Ver los restaurantes que estan cerca de un listing y que tengan una puntuacion mayor a cierto valor y un categoria de precio menor a 3.0. Devolver el nombre, el address, neighbourhood_group, rating y price
-
-4. Ver los listings que sean de categoria private room, que tengan un numero de reviews mayor a 50 y con un precio menor a cierto valor y sacar los 10 más actualizados. Que devuelvan el nombre del listing, el precio, cantidad de noches minimas, neighbourhod.
